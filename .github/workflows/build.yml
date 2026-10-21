@@ -1,0 +1,27 @@
+name: Build iOS Project
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+    build:
+      runs-on: macos-latest
+
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Required Local Directory
+        run: |
+          # Creates the local identity directory required by the project setup
+          mkdir -p .local/Identity
+
+      - name: Build Project for Simulator
+        run: |
+          xcodebuild -project TDSCarKit.xcodeproj \
+                     -scheme TDSCarKit \
+                     -sdk iphonesimulator \
+                     -destination 'platform=iOS Simulator,name=iPad (10th generation)' \
+                     clean build
