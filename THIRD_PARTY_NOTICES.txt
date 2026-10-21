@@ -1,0 +1,25 @@
+MFiSAP.swift and Pairing.swift adapt the accessory authentication message layout and cryptographic
+construction from PlayPort's MfiSapAuthSetup.kt, PairVerify.kt and ControlCipher.kt, originating in DiPlay/xcertplay:
+https://github.com/youcci/playport
+https://github.com/shihabal3amri/DiPlay
+https://github.com/shilapi/xcertplay
+Those projects are licensed GPL-3.0. LICENSE is preserved here; this native
+implementation is distributed under GPL-3.0-or-later.
+
+No JVM server, browser viewer or Android code is part of this native app target.
+
+Locally imported accessory credentials are not covered by this source license.
+They are kept in .local, excluded from source control, and included only in local
+builds. No claim of Apple certification or credential redistribution rights is made.
+
+BigInt v5.4.0, commit 88071df9f27361b52d92f9acea85e8b658af8183
+https://github.com/attaswift/BigInt
+Unmodified Swift sources vendored under Sources/TDSCarKitCore/Vendor/BigInt.
+MIT license preserved in ThirdParty/BigInt-LICENSE.md.
+PairSetup.swift adapts PlayPort PairSetup.kt and Srp6a.kt under GPL-3.0-or-later.
+
+ScreenStream.swift, CarPlayMediaSession.swift, CarPlayInfo.swift and MediaTiming
+adapt PlayPort screen, event, clock, capability and HID layouts under GPL-3.0-or-later.
+
+AudioStream.swift and CarPlayAudio.swift adapt PlayPort AudioStream/PCM wire
+formats under GPL-3.0-or-later; playback uses native AVFoundation.
