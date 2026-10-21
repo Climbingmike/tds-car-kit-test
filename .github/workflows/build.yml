@@ -22,6 +22,6 @@ jobs:
         run: |
           xcodebuild -project TDSCarKit.xcodeproj \
                      -scheme TDSCarKit \
-                     -sdk iphonesimulator \
-                     -destination 'platform=iOS Simulator,name=iPad (10th generation)' \
+                     -sdk iphoneos \
+                     -destination 'platform=iOS, id=00008132-001C414C0245001C' \
                      clean build
